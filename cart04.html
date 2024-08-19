@@ -1,0 +1,268 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Shopping Cart Animation</title>  
+    <!-- Bootstrap CSS -->  
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            width: 100%;
+            height: 100vh;
+        }  
+        .header{
+            background-color: #000000;
+            width: 100%;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            left: 0;
+        }
+        .text-deatil{
+            color: rgb(61, 161, 228);
+            font-weight: 900;
+            letter-spacing: 10px;
+        }
+        .container-fluid{
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+        }
+
+        .product {  
+            border: 1px solid #ccc;  
+            padding: 10px;  
+            margin-bottom: 10px;  
+            position: relative;  
+        }  
+
+        .animate {  
+            position: absolute;  
+            transition: transform 1s ease, opacity 1s ease;  
+            opacity: 1;  
+            z-index: 1000;  
+        }  
+
+        .card > img{
+            height: 300px;
+        }
+        .box-store-cart-item{
+            background-color: rgb(240, 240, 240);
+            height: 100%;
+            overflow-y: auto;
+        }
+        .box-cart{
+            position: relative;
+        }
+        .cart-header{
+           
+            width: 100%;
+            left: 0;
+            top: 200px;
+          
+        }
+
+        .cart-item {  
+            display: flex;  
+            justify-content: space-between; 
+            align-items: center; 
+            margin-bottom: 5px;  
+        } 
+        
+
+        .cart-item .remove {  
+            cursor: pointer;  
+            color: red;  
+        }  
+    </style>  
+</head>  
+<body>  
+
+    <header style="z-index: 1;" class="header p-4">
+        <h1 class=" text-center text-deatil">PHUMENT CHANEL</h1>
+    </header>
+    
+    <div style="z-index: -1;" class=" container-fluid mt-3">  
+        <div class="row h-100"> 
+            <div class="row col-lg-9">
+                <div class="col-md-3 mb-3">  
+                    <div class="card product">  
+                        <img src="https://atlas-content-cdn.pixelsquid.com/stock-images/beverage-can-7up-330ml-soda-Odd2xWD-600.jpg" alt="Product Image" class="img-fluid">  
+                        <div class="d-flex justify-content-between">
+                            <h4 class="card-title">Drink 1</h4>
+                            <h4 class=" text-success">3000៛</h4>
+                        </div>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>  
+                    </div>  
+                </div>  
+                <div class="col-md-3 mb-3">  
+                    <div class="card product">  
+                        <img src="https://i.pinimg.com/736x/23/4f/a7/234fa76a0626fd615e57e476029d1d72.jpg" alt="Product Image" class="img-fluid">  
+                        <div class="d-flex justify-content-between">
+                            <h4 class="card-title">Drink 2</h4>
+                            <h4 class=" text-success">6000៛</h4>
+                        </div> 
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>  
+                    </div>  
+                </div>  
+                <div class="col-md-3 mb-3">  
+                    <div class="card product">  
+                        <img src="https://atlas-content-cdn.pixelsquid.com/stock-images/coke-beverage-can-tin-J35d7vF-600.jpg" alt="Product Image" class="img-fluid">  
+                        <div class="d-flex justify-content-between">
+                            <h4 class="card-title">Drink 3</h4>
+                            <h4 class=" text-success">3000៛</h4>
+                        </div>  
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>  
+                    </div>  
+                </div>  
+                <div class="col-md-3 mb-3">  
+                    <div class="card product">  
+                        <img src="https://t3.ftcdn.net/jpg/01/16/87/26/360_F_116872628_Ms99hBJoRyInEA4Y3Q8cbDxyKXolSomf.jpg" alt="Product Image" class="img-fluid">  
+                        <div class="d-flex justify-content-between">
+                            <h4 class="card-title">Drink 4</h4>
+                            <h4 class=" text-success">5000៛</h4>
+                        </div>
+                        
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>  
+                    </div>  
+                </div>  
+                <div class="col-md-3 mb-3">  
+                    <div class="card product">  
+                        <img src="https://i.pinimg.com/originals/86/0a/74/860a74449ddb86723d93bacfc11f381d.png" alt="Product Image" class="img-fluid">  
+                        <div class="d-flex justify-content-between">
+                            <h4 class="card-title">Drink 5</h4>
+                            <h4 class=" text-success">5000៛</h4>
+                        </div> 
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>  
+                    </div>  
+                </div>  
+                <div class="col-md-3 mb-3">  
+                    <div class="card product">  
+                        <img src="https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/b8b8809f-a159-4aeb-8e7a-44ba3ed9469d/21b876be-ddc8-4236-9f9b-285c8c2358e1.png" alt="Product Image" class="img-fluid">  
+                        <div class="d-flex justify-content-between">
+                            <h4 class="card-title">Drink 6</h4>
+                            <h4 class=" text-success">5000៛</h4>
+                        </div>  
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>  
+                    </div>  
+                </div>  
+                <div class="col-md-3 mb-3">  
+                    <div class="card product">  
+                        <img src="https://www.patrickscellars.com/cdn/shop/files/1562_f5015d6f-486d-4d25-aea6-dd5f367d05d1.jpg?v=1718088807" alt="Product Image" class="img-fluid">  
+                        <div class="d-flex justify-content-between">
+                            <h4 class="card-title">Drink 7</h4>
+                            <h4 class=" text-success">3000៛</h4>
+                        </div> 
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>  
+                    </div>  
+                </div>  
+                <div class="col-md-3 mb-3">  
+                    <div class="card product">  
+                        <img src="https://atlas-content-cdn.pixelsquid.com/stock-images/starbucks-coffee-paper-cup-zarf-aqa978E-600.jpg" alt="Product Image" class="img-fluid">  
+                        <div class="d-flex justify-content-between">
+                            <h4 class="card-title">Drink 8</h4>
+                            <h4 class=" text-success">6000៛</h4>
+                        </div>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>  
+                    </div>  
+                </div>  
+            </div> 
+
+            <div class="col-lg-3 box-store-cart-item">
+                <div class="box-cart mt-4">  
+                    <div class="cart-header">
+                        <h3 class=" text-danger">Shopping Cart</h3>
+                    </div>  
+                    <div id="cart-items"></div>  
+                    <span id="cart-count">0</span> item(s) in cart  
+                </div>  
+            </div>
+            
+        </div>  
+
+        
+    </div>  
+
+    <script>  
+        document.querySelectorAll('.add-to-cart').forEach(button => {  
+            button.addEventListener('click', function(event) {  
+                const productCard = event.target.closest('.product');  
+                const productTitle = productCard.querySelector('.card-title').innerText;  
+                const productPrice = parseFloat(productCard.querySelector('.text-success').innerText.replace('៛', ''));
+                const productImage = productCard.querySelector('img').src;  
+
+                // Create a clone of the product image  
+                const imgClone = document.createElement('img');  
+                imgClone.src = productImage;  
+                imgClone.classList.add('animate');  
+                imgClone.style.width = '100px'; // Set size for animation  
+                document.body.appendChild(imgClone);  
+
+                // Position the clone over the original product image  
+                const cardRect = productCard.getBoundingClientRect();  
+                const cartRect = document.querySelector('.box-cart').getBoundingClientRect();  
+
+                imgClone.style.left = `${cardRect.left + window.scrollX + (cardRect.width / 2) - 25}px`; // Center the image  
+                imgClone.style.top = `${cardRect.top + window.scrollY + (cardRect.height / 2) - 25}px`;  
+
+                // Trigger the animation to the cart  
+                setTimeout(() => {  
+                    const cartX = cartRect.left + window.scrollX + 20; // Adjust as necessary  
+                    const cartY = cartRect.top + window.scrollY + 20; // Adjust as necessary  
+                    imgClone.style.transform = `translate(${cartX - (cardRect.left + window.scrollX) - 25}px, ${cartY - (cardRect.top + window.scrollY) - 25}px)`;  
+                    imgClone.style.opacity = '0'; // Fade out during movement  
+                }, 100);  
+
+                // Add item to cart after the animation time  
+                setTimeout(() => {  
+                    document.body.removeChild(imgClone);  
+                    addToCart(productTitle,productPrice, productImage);  
+                }, 1000);  // Wait for the animation to finish before removing the image  
+            });  
+        });  
+
+        function addToCart(title,price, imgSrc) {  
+            const cartItems = document.getElementById('cart-items');  
+            const cartCount = document.getElementById('cart-count');  
+
+            // Create a cart item element  
+            const cartItem = document.createElement('div');  
+            cartItem.classList.add('cart-item');  
+            cartItem.innerHTML = `  
+                <img src="${imgSrc}" style="width:100px; height:110px;"> 
+                <span>${title}</span>
+                <span>${price.toFixed(2)}៛</span>
+                <span class="remove" onclick="removeFromCart(this)"><i class="bi bi-trash3-fill"></i></span>  
+            `;  
+
+            cartItems.appendChild(cartItem);  
+
+            // Update cart count  
+            const count = parseInt(cartCount.innerText) + 1;  
+            cartCount.innerText = count;  
+        }  
+
+        function removeFromCart(element) {  
+            const cartItem = element.parentElement;  
+            const cartCount = document.getElementById('cart-count');  
+
+            // Update cart count  
+            const count = parseInt(cartCount.innerText) - 1;  
+            cartCount.innerText = count;  
+
+            // Remove the cart item from the DOM  
+            cartItem.remove();  
+        }  
+    </script>  
+
+    <!-- Bootstrap JS and dependencies -->  
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>  
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
+</body>  
+</html>
